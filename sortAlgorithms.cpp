@@ -131,3 +131,74 @@ void sortAlgorithms::maxHeapify(int*A){
   }
   sortAlgorithms:: setCount(vectorLength);
  }
+
+/**
+*Insertion sort
+*
+*/
+void InsertionSort(int *Datos, int length)
+{
+ int key,i,j;
+ for(j=1;j<length;j++)
+ {
+	key=Datos[j];
+	i=j-1;
+ 	while(i>=0 && Datos[i]>key)
+	{
+		Datos[i+1]=Datos[i];
+		i--;
+	}
+	Datos[i+1]=key;
+	//Imprime estado del vector por cada iteracion
+	//Print(Datos);
+ }
+}
+
+/**
+**********MergeSort****************
+*
+/*Function Merge*/
+void Merge(int *Datos, int p, int q, int r)
+{
+	int n1, n2, i, j;
+	n1=q-p+1;
+	n2=r-q;
+	//vector<int> L(n1+1);
+	//vector<int> R(n2+1);
+	int *L= new int[n1+1];
+	int *R= new int[n2+1];
+	for(i=0;i<n1;i++)
+		L[i]=Datos[p+i];
+	for(j=0;j<n2;j++)
+		R[j]=Datos[q+j+1];
+	L[i]=100;
+	R[j]=100;
+	i=0;
+	j=0;
+	for(int k=p;k<(r+1);k++)
+	{
+		if(L[i]<=R[j])
+		{
+			Datos[k]=L[i];
+			i=i+1;
+		}
+		else
+		{
+			Datos[k]=R[j];
+			j=j+1;
+		}
+	}
+	delete[] L;
+	delete[] R;
+}
+/*Function MergeSort*/
+void MergeSort(int *Datos, int p, int r)
+{
+	if(p<r)
+	{
+		int q=(p+r)/2;
+		MergeSort(&Datos[0],p,q);
+		MergeSort(&Datos[0],q+1,r);
+		Merge(&Datos[0],p,q,r);
+	}
+}
