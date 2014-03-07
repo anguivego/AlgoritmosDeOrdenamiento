@@ -136,7 +136,7 @@ void sortAlgorithms::maxHeapify(int*A){
 *Insertion sort
 *
 */
-void InsertionSort(int *Datos, int length)
+void sortAlgorithms::InsertionSort(int *Datos, int length)
 {
  int key,i,j;
  for(j=1;j<length;j++)
@@ -157,8 +157,8 @@ void InsertionSort(int *Datos, int length)
 /**
 **********MergeSort****************
 *
-/*Function Merge*/
-void Merge(int *Datos, int p, int q, int r)
+*Function Merge*/
+void sortAlgorithms::Merge(int *Datos, int p, int q, int r)
 {
 	int n1, n2, i, j;
 	n1=q-p+1;
@@ -192,7 +192,7 @@ void Merge(int *Datos, int p, int q, int r)
 	delete[] R;
 }
 /*Function MergeSort*/
-void MergeSort(int *Datos, int p, int r)
+void sortAlgorithms::MergeSort(int *Datos, int p, int r)
 {
 	if(p<r)
 	{

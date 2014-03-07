@@ -4,6 +4,8 @@
 #include "sortAlgorithms.hpp"
 #include <string.h>
 #define HEAPSORT "--heapsort"
+#define INSERTSORT "--insertsort"
+#define MERGESORT "--mergesort"
 using namespace std;
 int main (int argvc,char *argv[]) {
 
@@ -23,6 +25,16 @@ int main (int argvc,char *argv[]) {
  if(strcmp(argv[1],HEAPSORT)==0){
   begin=clock();
   a.heapSort(A);
+  end=clock();
+ }
+ if(strcmp(argv[1],INSERTSORT)==0){
+  begin=clock();
+  a.InsertionSort(A,a.getCount());
+  end=clock();
+ }
+ if(strcmp(argv[1],MERGESORT)==0){
+  begin=clock();
+  a.MergeSort(A,a.getCount());
   end=clock();
  }
 
