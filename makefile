@@ -1,2 +1,2 @@
 all:
-	g++  -Wall  sortAlgorithms.cpp main.cpp -o trabajoFinal
+	g++  -std=c++0x -Wall  sortAlgorithms.cpp main.cpp -o trabajoFinal
