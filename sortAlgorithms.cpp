@@ -35,7 +35,7 @@ void sortAlgorithms::Print(int *Datos, int length)
 }
 
 
-int *sortAlgorithms::loadFile(string fileName){
+int *sortAlgorithms::loadFile(string fileName, int verbose){
   
   file.open(fileName, std::ifstream::binary);
   if (file) {
@@ -47,11 +47,13 @@ int *sortAlgorithms::loadFile(string fileName){
     char * buffer = new char [length];
     int *randomArray= (int*)buffer;
     // read data as a block:
-    cout<<"loading file ... "<<endl;
+    if(verbose==1)
+    	cout<<"loading file ... "<<endl;
     file.read (buffer,length);
     // ...buffer contains the entire file...
     if (file){
-      cout << "loading file done!! toal bytes read="<<file.gcount()/4<<endl;
+      if(verbose==1)
+         cout << "loading file done!! toal bytes read="<<file.gcount()/4<<endl;
       count=file.gcount()/4;
       return randomArray;
     }

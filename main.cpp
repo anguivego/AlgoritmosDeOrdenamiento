@@ -4,68 +4,107 @@
 #include "sortAlgorithms.hpp"
 #include <string.h>
 
-#define INF 0x7fffffff
+#define K 3000000
+#define NUMOPT 7
 #define HEAPSORT "--heapsort"
 #define INSERTSORT "--insertsort"
 #define MERGESORT "--mergesort"
 #define MERGESORTOPT "--mergesortopt"
 #define COUNTINGSORT "--countingsort"
 #define VERBOSE "--verbose"
+#define DISPLAYV "--displayvectors"
 
 using namespace std;
 
 int main (int argvc,char *argv[]) {
-
   
-  cout<<"testing "<<argvc<<endl;
+  int *Options = new int[NUMOPT];//El tamaño del vector corresponde al tamaño de las opciones
+  for(int i=0;i<NUMOPT;i++)
+	Options[i]=0;
+		
+  if(argvc>3)
+	for(int i=1;i<argvc-1;i++)
+	{
+		if(strcmp(argv[i],VERBOSE)==0)
+			Options[0]=1;
+		if(strcmp(argv[i],HEAPSORT)==0)
+			Options[1]=1;
+		if(strcmp(argv[i],INSERTSORT)==0)
+			Options[2]=1;
+		if(strcmp(argv[i],MERGESORT)==0)
+			Options[3]=1;
+		if(strcmp(argv[i],MERGESORTOPT)==0)
+			Options[4]=1;
+		if(strcmp(argv[i],COUNTINGSORT)==0)
+			Options[5]=1;
+		if(strcmp(argv[i],DISPLAYV)==0)
+			Options[6]=1;
+	}
+
+  if(Options[0]==1)
+  	cout<<"testing "<<argvc<<endl;
+ 
   sortAlgorithms a;
   int *A;
 
-  cout<<"loading file : " <<argv[2]<<endl;
-  A=a.loadFile(argv[2]);
+  if(Options[0]==1)
+  	cout<<"loading file : "<<argv[argvc-1]<<endl;
+  
+  A=a.loadFile(argv[argvc-1],Options[0]);
   a.closeFile();
- 
+  
   
  //clock_t begin=0,end=0;
  //double elapsed_secs = 0;
+ if(Options[6]==1)
+ 	a.Print(A,a.getCount());
  
- //a.Print(A,a.getCount());
- 
- if(strcmp(argv[1],HEAPSORT)==0){
+ if(Options[1]==1){
   a.InitTime();//begin=clock();
   a.heapSort(A);
   a.EndTime();//end=clock();
-  //a.Print(A,a.getCount());
+  if(Options[6]==1)
+  	a.Print(A,a.getCount());
+  cout<<a.getCount()<<","<<a.timeval_diff()<<endl;
  }
- if(strcmp(argv[1],INSERTSORT)==0){
+ if(Options[2]==1){
   a.InitTime();
   a.InsertionSort(A,a.getCount());
   a.EndTime();
-  //a.Print(A,a.getCount());
+  if(Options[6]==1)
+  	a.Print(A,a.getCount());
+  cout<<a.getCount()<<","<<a.timeval_diff()<<endl;
  }
- if(strcmp(argv[1],MERGESORT)==0){
+ if(Options[3]==1){
   a.InitTime();
   a.MergeSort(A,0,a.getCount()-1);
   a.EndTime();
-  //a.Print(A,a.getCount());
+  if(Options[6]==1)
+  	a.Print(A,a.getCount());
+  cout<<a.getCount()<<","<<a.timeval_diff()<<endl;
  }
- if(strcmp(argv[1],MERGESORTOPT)==0){
+ if(Options[4]==1){
   a.InitTime();
   a.MergeSortOptimize(A,0,a.getCount()-1);
   a.EndTime();
-  //a.Print(A,a.getCount());
+  if(Options[6]==1)
+  	a.Print(A,a.getCount());
+  cout<<a.getCount()<<","<<a.timeval_diff()<<endl;
  }
- if(strcmp(argv[1],COUNTINGSORT)==0){
-  int *B = new int[a.getCount()];
+ if(Options[5]==1){
+  int length=a.getCount();
+  int *B = new int[length];
   a.InitTime();
-  a.CountingSort(A,a.getCount(),B,INF-1);
+  a.CountingSort(A,length,B,K);
   a.EndTime();
-  //a.Print(B,a.getCount());
+  if(Options[6]==1)
+  	a.Print(B,a.getCount());
+  cout<<a.getCount()<<","<<a.timeval_diff()<<endl;
   delete[] B;
  }
 
  //elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
- cout<<a.getCount()<<","<<a.timeval_diff();//elapsed_secs<<endl;
+ //cout<<a.getCount()<<","<<a.timeval_diff();//elapsed_secs<<endl;
  a.freeMemory(A);
  return 0;
 }

@@ -13,7 +13,7 @@ class sortAlgorithms{
   	int count;
 	struct timeval t_ini, t_fin;
   	public:
-  	int *loadFile(string fileName);
+    int *loadFile(string fileName, int verbose);
     void InitTime();
     void EndTime();
     double timeval_diff();
