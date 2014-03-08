@@ -33,5 +33,5 @@ class sortAlgorithms{
     void MergeSortOptimize(int *Datos, int p, int r);
     void MergeSortAux(int *Datos,int *L,int *R, int p, int r);
     void MergeAux(int *Datos,int *L,int *R, int p, int q, int r);
-    void CountingSort(int *A, int length, int *B, int k)
+    void CountingSort(int *A, int length, int *B, int k);
 };

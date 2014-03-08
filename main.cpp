@@ -4,17 +4,20 @@
 #include "sortAlgorithms.hpp"
 #include <string.h>
 
+#define INF 0x7fffffff
 #define HEAPSORT "--heapsort"
 #define INSERTSORT "--insertsort"
 #define MERGESORT "--mergesort"
 #define MERGESORTOPT "--mergesortopt"
 #define COUNTINGSORT "--countingsort"
+#define VERBOSE "--verbose"
 
 using namespace std;
 
 int main (int argvc,char *argv[]) {
 
-  cout<<"testing"<<endl;
+  
+  cout<<"testing "<<argvc<<endl;
   sortAlgorithms a;
   int *A;
 
