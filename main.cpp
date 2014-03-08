@@ -5,12 +5,13 @@
 #include <string.h>
 
 #define K 3000000
-#define NUMOPT 7
+#define NUMOPT 8
 #define HEAPSORT "--heapsort"
 #define INSERTSORT "--insertsort"
 #define MERGESORT "--mergesort"
 #define MERGESORTOPT "--mergesortopt"
 #define COUNTINGSORT "--countingsort"
+#define QUICKSORT "--quicksort"
 #define VERBOSE "--verbose"
 #define DISPLAYV "--displayvectors"
 #define TODOS "--todos"
@@ -42,6 +43,12 @@ int main (int argvc,char *argv[]) {
 			Options[4]=1;
 		if(strcmp(argv[i],COUNTINGSORT)==0)
 			Options[5]=1;
+	    if(strcmp(argv[i],QUICKSORT)==0)
+		{
+			cout<<"primer commit alexa";
+		}
+			//Options[5]=1;
+			
 		if(strcmp(argv[i],DISPLAYV)==0)
 			Options[6]=1;
 	}
