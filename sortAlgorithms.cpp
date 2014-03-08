@@ -7,6 +7,21 @@
 
 using namespace std;
 
+double sortAlgorithms::timeval_diff()
+{
+	return (double)(t_fin.tv_sec + (double)t_fin.tv_usec/1000000) - (double)(t_ini.tv_sec + (double)t_ini.tv_usec/1000000);
+}
+
+void sortAlgorithms::InitTime()
+{
+	gettimeofday(&t_ini,NULL);
+}
+
+void sortAlgorithms::EndTime()
+{
+	gettimeofday(&t_fin,NULL);
+}
+
 void sortAlgorithms::Print(int *Datos, int length)
 {
  for(int i=0;i<length;i++)

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
-#include <fstream>      // std::ifstream
+#include <fstream> 
+#include <time.h>
+#include <sys/time.h>     // std::ifstream
 using namespace std;
 
  
@@ -9,8 +11,12 @@ class sortAlgorithms{
 	private:
   	ifstream file;
   	int count;
+	struct timeval t_ini, t_fin;
   	public:
   	int *loadFile(string fileName);
+    void InitTime();
+    void EndTime();
+    double timeval_diff();
     void Print(int *Datos, int length);
     void closeFile();
     void freeMemory(int *buffer);

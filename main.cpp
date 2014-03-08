@@ -22,35 +22,35 @@ int main (int argvc,char *argv[]) {
   a.closeFile();
  
   
- clock_t begin=0,end=0;
- double elapsed_secs = 0;
+ //clock_t begin=0,end=0;
+ //double elapsed_secs = 0;
  
  a.Print(A,a.getCount());
  
  if(strcmp(argv[1],HEAPSORT)==0){
-  begin=clock();
+  a.InitTime();//begin=clock();
   a.heapSort(A);
-  end=clock();
+  a.EndTime();//end=clock();
  }
  if(strcmp(argv[1],INSERTSORT)==0){
-  begin=clock();
+  a.InitTime();
   a.InsertionSort(A,a.getCount());
-  end=clock();
+  a.EndTime();
  }
  if(strcmp(argv[1],MERGESORT)==0){
-  begin=clock();
+  a.InitTime();
   a.MergeSort(A,0,a.getCount()-1);
-  end=clock();
+  a.EndTime();
  }
  if(strcmp(argv[1],MERGESORTOPT)==0){
-  begin=clock();
+  a.InitTime();
   a.MergeSortOptimize(A,0,a.getCount()-1);
-  end=clock();
+  a.EndTime();
  }
  a.Print(A,a.getCount());
 
- elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
- cout<<a.getCount()<<","<<elapsed_secs<<endl;
+ //elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
+ cout<<a.getCount()<<","<<a.timeval_diff();//elapsed_secs<<endl;
  a.freeMemory(A);
  return 0;
 }
