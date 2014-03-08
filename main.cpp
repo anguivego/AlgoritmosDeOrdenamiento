@@ -3,10 +3,14 @@
 #include <fstream>      // std::ifstream
 #include "sortAlgorithms.hpp"
 #include <string.h>
+
 #define HEAPSORT "--heapsort"
 #define INSERTSORT "--insertsort"
 #define MERGESORT "--mergesort"
+#define MERGESORTOPT "--mergesortopt"
+
 using namespace std;
+
 int main (int argvc,char *argv[]) {
 
   cout<<"testing"<<endl;
@@ -21,6 +25,7 @@ int main (int argvc,char *argv[]) {
  clock_t begin=0,end=0;
  double elapsed_secs = 0;
  
+ a.Print(A,a.getCount());
  
  if(strcmp(argv[1],HEAPSORT)==0){
   begin=clock();
@@ -34,10 +39,15 @@ int main (int argvc,char *argv[]) {
  }
  if(strcmp(argv[1],MERGESORT)==0){
   begin=clock();
-  a.MergeSort(A,a.getCount());
+  a.MergeSort(A,0,a.getCount()-1);
   end=clock();
  }
-
+ if(strcmp(argv[1],MERGESORTOPT)==0){
+  begin=clock();
+  a.MergeSortOptimize(A,0,a.getCount()-1);
+  end=clock();
+ }
+ a.Print(A,a.getCount());
 
  elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
  cout<<a.getCount()<<","<<elapsed_secs<<endl;

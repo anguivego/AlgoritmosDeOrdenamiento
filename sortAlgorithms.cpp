@@ -2,7 +2,23 @@
 #include <iostream>
 #include <string>
 #include <fstream>      // std::ifstream
+
+#define INF 0x7fffffff
+
 using namespace std;
+
+void sortAlgorithms::Print(int *Datos, int length)
+{
+ for(int i=0;i<length;i++)
+ {
+ 	cout<<Datos[i];
+	if(i<length-1)
+		cout<<",";
+	else
+ 		cout<<"\n";
+ }
+}
+
 
 int *sortAlgorithms::loadFile(string fileName){
   
@@ -171,8 +187,8 @@ void sortAlgorithms::Merge(int *Datos, int p, int q, int r)
 		L[i]=Datos[p+i];
 	for(j=0;j<n2;j++)
 		R[j]=Datos[q+j+1];
-	L[i]=100;
-	R[j]=100;
+	L[i]=INF;
+	R[j]=INF;
 	i=0;
 	j=0;
 	for(int k=p;k<(r+1);k++)
@@ -200,5 +216,65 @@ void sortAlgorithms::MergeSort(int *Datos, int p, int r)
 		MergeSort(&Datos[0],p,q);
 		MergeSort(&Datos[0],q+1,r);
 		Merge(&Datos[0],p,q,r);
+	}
+}
+
+/**
+**********MergeSortOptimize****************
+*
+*Function MergeAux*/
+void sortAlgorithms::MergeAux(int *Datos,int *L,int *R, int p, int q, int r)
+{
+	int n1, n2, i, j;
+	n1=q-p+1;
+	n2=r-q;
+	for(i=0;i<n1;i++)
+		L[i]=Datos[p+i];
+	for(j=0;j<n2;j++)
+		R[j]=Datos[q+j+1];
+	L[i]=INF;
+	R[j]=INF;
+	i=0;
+	j=0;
+	for(int k=p;k<(r+1);k++)
+	{
+		if(L[i]<=R[j])
+		{
+			Datos[k]=L[i];
+			i=i+1;
+		}
+		else
+		{
+			Datos[k]=R[j];
+			j=j+1;
+		}
+	}
+}
+/*Function MergeSortAux*/
+void sortAlgorithms::MergeSortAux(int *Datos,int *L,int *R, int p, int r)
+{
+	if(p<r)
+	{
+		int q=(p+r)/2;
+		MergeSortAux(&Datos[0],&L[0],&R[0],p,q);
+		MergeSortAux(&Datos[0],&L[0],&R[0],q+1,r);
+		MergeAux(&Datos[0],&L[0],&R[0],p,q,r);
+	}
+}
+/*Function MergeSortOptimize*/
+void sortAlgorithms::MergeSortOptimize(int *Datos, int p, int r)
+{
+	if(p<r)
+	{
+		int n1,n2,q=(p+r)/2;		
+		n1=q;
+		n2=r-q;
+		//vector<int> L(n1+1);
+		//vector<int> R(n2+1);
+		int *L= new int[n1+2];
+		int *R= new int[n2+2];
+		MergeSortAux(&Datos[0],&L[0],&R[0],p,r);
+		delete[] L;
+		delete[] R;
 	}
 }

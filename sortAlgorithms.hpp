@@ -11,6 +11,7 @@ class sortAlgorithms{
   	int count;
   	public:
   	int *loadFile(string fileName);
+    void Print(int *Datos, int length);
     void closeFile();
     void freeMemory(int *buffer);
     int getCount();
@@ -23,4 +24,7 @@ class sortAlgorithms{
     void InsertionSort(int *A, int length);
     void Merge(int *A, int p, int q, int r);
     void MergeSort(int *A, int p, int r);
+    void MergeSortOptimize(int *Datos, int p, int r);
+    void MergeSortAux(int *Datos,int *L,int *R, int p, int r);
+    void MergeAux(int *Datos,int *L,int *R, int p, int q, int r);
 };
