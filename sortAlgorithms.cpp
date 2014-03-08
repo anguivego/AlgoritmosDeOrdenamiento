@@ -293,3 +293,26 @@ void sortAlgorithms::MergeSortOptimize(int *Datos, int p, int r)
 		delete[] R;
 	}
 }
+
+/*
+*
+*Counting Sort
+*/
+void sortAlgorithms::CountingSort(int *A, int length, int *B, int k)
+{
+	int i,j;
+	int *C= new int[k+1];
+	for(i=0;i<=k;i++)
+		C[i]=0;
+	for(j=0;j<length;j++)
+		C[A[j]]=C[A[j]]+1;
+	for(i=0;i<k+1;i++)
+		if(i>0)
+			C[i]=C[i]+C[i-1];
+	for(j=length-1;j>=0;j--)
+	{
+		B[C[A[j]]-1]=A[j];
+		C[A[j]]=C[A[j]]-1;
+	}
+	delete[] C;
+}
