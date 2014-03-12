@@ -43,14 +43,10 @@ int main (int argvc,char *argv[]) {
 			Options[4]=1;
 		if(strcmp(argv[i],COUNTINGSORT)==0)
 			Options[5]=1;
-	    if(strcmp(argv[i],QUICKSORT)==0)
-		{
-			cout<<"primer commit alexa";
-		}
-			//Options[5]=1;
-			
 		if(strcmp(argv[i],DISPLAYV)==0)
 			Options[6]=1;
+		if(strcmp(argv[i],QUICKSORT)==0)
+			Options[7]=1;
 	}
 
   if(Options[0]==1)
@@ -114,7 +110,14 @@ int main (int argvc,char *argv[]) {
   cout<<"CountingSort"<<a.getCount()<<","<<a.timeval_diff()<<endl;
   delete[] B;
  }
-
+ if(Options[7]==1){
+  a.InitTime();
+  a.QuickSort(A,0,a.getCount()-1);
+  a.EndTime();
+  if(Options[6]==1)
+  	a.Print(A,a.getCount());
+  cout<<"QuickSort"<<a.getCount()<<","<<a.timeval_diff()<<endl;
+ }
  //elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
  //cout<<a.getCount()<<","<<a.timeval_diff();//elapsed_secs<<endl;
  a.freeMemory(A);
