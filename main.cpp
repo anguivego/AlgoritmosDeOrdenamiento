@@ -73,7 +73,7 @@ int main (int argvc,char *argv[]) {
   a.EndTime();//end=clock();
   if(Options[6]==1)
   	a.Print(A,a.getCount());
-  cout<<"HeapSort"<<a.getCount()<<","<<a.timeval_diff()<<endl;
+  cout<<"HeapSort,"<<a.getCount()<<","<<a.timeval_diff()<<endl;
  }
  if(Options[2]==1){
   a.InitTime();
@@ -81,7 +81,7 @@ int main (int argvc,char *argv[]) {
   a.EndTime();
   if(Options[6]==1)
   	a.Print(A,a.getCount());
-  cout<<"InsertionSort"<<a.getCount()<<","<<a.timeval_diff()<<endl;
+  cout<<"InsertionSort,"<<a.getCount()<<","<<a.timeval_diff()<<endl;
  }
  if(Options[3]==1){
   a.InitTime();
@@ -89,7 +89,7 @@ int main (int argvc,char *argv[]) {
   a.EndTime();
   if(Options[6]==1)
   	a.Print(A,a.getCount());
-  cout<<"MergeSort"<<a.getCount()<<","<<a.timeval_diff()<<endl;
+  cout<<"MergeSort,"<<a.getCount()<<","<<a.timeval_diff()<<endl;
  }
  if(Options[4]==1){
   a.InitTime();
@@ -97,7 +97,7 @@ int main (int argvc,char *argv[]) {
   a.EndTime();
   if(Options[6]==1)
   	a.Print(A,a.getCount());
-  cout<<"MergeSortOpt"<<a.getCount()<<","<<a.timeval_diff()<<endl;
+  cout<<"MergeSortOpt,"<<a.getCount()<<","<<a.timeval_diff()<<endl;
  }
  if(Options[5]==1){
   int length=a.getCount();
@@ -107,7 +107,7 @@ int main (int argvc,char *argv[]) {
   a.EndTime();
   if(Options[6]==1)
   	a.Print(B,a.getCount());
-  cout<<"CountingSort"<<a.getCount()<<","<<a.timeval_diff()<<endl;
+  cout<<"CountingSort,"<<a.getCount()<<","<<a.timeval_diff()<<endl;
   delete[] B;
  }
  if(Options[7]==1){
@@ -116,7 +116,7 @@ int main (int argvc,char *argv[]) {
   a.EndTime();
   if(Options[6]==1)
   	a.Print(A,a.getCount());
-  cout<<"QuickSort"<<a.getCount()<<","<<a.timeval_diff()<<endl;
+  cout<<"QuickSort,"<<a.getCount()<<","<<a.timeval_diff()<<endl;
  }
  //elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
  //cout<<a.getCount()<<","<<a.timeval_diff();//elapsed_secs<<endl;

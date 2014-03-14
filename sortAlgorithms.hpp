@@ -34,4 +34,7 @@ class sortAlgorithms{
     void MergeSortAux(int *Datos,int *L,int *R, int p, int r);
     void MergeAux(int *Datos,int *L,int *R, int p, int q, int r);
     void CountingSort(int *A, int length, int *B, int k);
+    void QuickSort(int *A, int p, int r);
+    int Partition(int *A, int p, int r);
+
 };
