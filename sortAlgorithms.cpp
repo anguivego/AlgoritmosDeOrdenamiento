@@ -160,7 +160,7 @@ void sortAlgorithms::maxHeapify(int*A){
     A[i]=tmp;
     heapLength--;
     sortAlgorithms::setCount(heapLength);
-    sortAlgorithms::maxHeapify(A);
+    sortAlgorithms::heapify(A,0);
   }
   sortAlgorithms:: setCount(vectorLength);
  }
