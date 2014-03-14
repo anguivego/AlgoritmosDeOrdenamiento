@@ -1,0 +1,37 @@
+
+
+echo "Testing counting Sort"
+
+
+./trabajoFinal --countingsort "100000.rand" 
+./trabajoFinal --countingsort "200000.rand" 
+./trabajoFinal --countingsort "300000.rand" 
+./trabajoFinal --countingsort "400000.rand" 
+./trabajoFinal --countingsort "500000.rand" 
+./trabajoFinal --countingsort "600000.rand" 
+./trabajoFinal --countingsort "700000.rand" 
+./trabajoFinal --countingsort "800000.rand" 
+./trabajoFinal --countingsort "900000.rand" 
+./trabajoFinal --countingsort "1000000.rand" 
+
+
+./trabajoFinal --countingsort "1000000.rand" 
+./trabajoFinal --countingsort "2000000.rand" 
+./trabajoFinal --countingsort "3000000.rand" 
+./trabajoFinal --countingsort "4000000.rand" 
+./trabajoFinal --countingsort "5000000.rand" 
+./trabajoFinal --countingsort "6000000.rand" 
+./trabajoFinal --countingsort "7000000.rand" 
+./trabajoFinal --countingsort "8000000.rand" 
+./trabajoFinal --countingsort "9000000.rand" 
+./trabajoFinal --countingsort "10000000.rand"
+./trabajoFinal --countingsort "11000000.rand"
+./trabajoFinal --countingsort "12000000.rand"
+./trabajoFinal --countingsort "13000000.rand"
+./trabajoFinal --countingsort "14000000.rand"
+./trabajoFinal --countingsort "15000000.rand"
+./trabajoFinal --countingsort "16000000.rand"
+./trabajoFinal --countingsort "17000000.rand"
+./trabajoFinal --countingsort "18000000.rand"
+./trabajoFinal --countingsort "19000000.rand"
+./trabajoFinal --countingsort "20000000.rand"

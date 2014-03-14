@@ -1,0 +1,37 @@
+
+
+echo "Testing Merge Sort"
+
+
+./trabajoFinal --mergesort "100000.rand" 
+./trabajoFinal --mergesort "200000.rand" 
+./trabajoFinal --mergesort "300000.rand" 
+./trabajoFinal --mergesort "400000.rand" 
+./trabajoFinal --mergesort "500000.rand" 
+./trabajoFinal --mergesort "600000.rand" 
+./trabajoFinal --mergesort "700000.rand" 
+./trabajoFinal --mergesort "800000.rand" 
+./trabajoFinal --mergesort "900000.rand" 
+./trabajoFinal --mergesort "1000000.rand" 
+
+
+./trabajoFinal --mergesort "1000000.rand" 
+./trabajoFinal --mergesort "2000000.rand" 
+./trabajoFinal --mergesort "3000000.rand" 
+./trabajoFinal --mergesort "4000000.rand" 
+./trabajoFinal --mergesort "5000000.rand" 
+./trabajoFinal --mergesort "6000000.rand" 
+./trabajoFinal --mergesort "7000000.rand" 
+./trabajoFinal --mergesort "8000000.rand" 
+./trabajoFinal --mergesort "9000000.rand" 
+./trabajoFinal --mergesort "10000000.rand"
+./trabajoFinal --mergesort "11000000.rand"
+./trabajoFinal --mergesort "12000000.rand"
+./trabajoFinal --mergesort "13000000.rand"
+./trabajoFinal --mergesort "14000000.rand"
+./trabajoFinal --mergesort "15000000.rand"
+./trabajoFinal --mergesort "16000000.rand"
+./trabajoFinal --mergesort "17000000.rand"
+./trabajoFinal --mergesort "18000000.rand"
+./trabajoFinal --mergesort "19000000.rand"
+./trabajoFinal --mergesort "20000000.rand"

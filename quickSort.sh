@@ -1,0 +1,37 @@
+
+
+echo "Testing counting Sort"
+
+
+./trabajoFinal --quicksort "100000.rand" 
+./trabajoFinal --quicksort "200000.rand" 
+./trabajoFinal --quicksort "300000.rand" 
+./trabajoFinal --quicksort "400000.rand" 
+./trabajoFinal --quicksort "500000.rand" 
+./trabajoFinal --quicksort "600000.rand" 
+./trabajoFinal --quicksort "700000.rand" 
+./trabajoFinal --quicksort "800000.rand" 
+./trabajoFinal --quicksort "900000.rand" 
+./trabajoFinal --quicksort "1000000.rand" 
+
+
+./trabajoFinal --quicksort "1000000.rand" 
+./trabajoFinal --quicksort "2000000.rand" 
+./trabajoFinal --quicksort "3000000.rand" 
+./trabajoFinal --quicksort "4000000.rand" 
+./trabajoFinal --quicksort "5000000.rand" 
+./trabajoFinal --quicksort "6000000.rand" 
+./trabajoFinal --quicksort "7000000.rand" 
+./trabajoFinal --quicksort "8000000.rand" 
+./trabajoFinal --quicksort "9000000.rand" 
+./trabajoFinal --quicksort "10000000.rand"
+./trabajoFinal --quicksort "11000000.rand"
+./trabajoFinal --quicksort "12000000.rand"
+./trabajoFinal --quicksort "13000000.rand"
+./trabajoFinal --quicksort "14000000.rand"
+./trabajoFinal --quicksort "15000000.rand"
+./trabajoFinal --quicksort "16000000.rand"
+./trabajoFinal --quicksort "17000000.rand"
+./trabajoFinal --quicksort "18000000.rand"
+./trabajoFinal --quicksort "19000000.rand"
+./trabajoFinal --quicksort "20000000.rand"
