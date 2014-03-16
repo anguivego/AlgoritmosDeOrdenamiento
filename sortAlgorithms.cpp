@@ -355,3 +355,15 @@ int sortAlgorithms::Partition(int *A, int p, int r)
     A[r] = vposiplus1;
     return (i+1);
 }
+
+void sortAlgorithms::heapInsertSort(int *A){
+	maxHeapify(A);
+	int tmp,lengthA;
+	lengthA=getCount()-1;
+	for (int i = 0; i < lengthA/2;i++){
+		tmp=A[i];
+		A[i]=A[lengthA-i];
+		A[lengthA-i]=tmp;
+	}
+	sortAlgorithms::InsertionSort(A,sortAlgorithms::getCount());
+}

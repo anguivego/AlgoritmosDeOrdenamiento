@@ -5,13 +5,14 @@
 #include <string.h>
 
 #define K 3000000
-#define NUMOPT 8
+#define NUMOPT 9
 #define HEAPSORT "--heapsort"
 #define INSERTSORT "--insertsort"
 #define MERGESORT "--mergesort"
 #define MERGESORTOPT "--mergesortopt"
 #define COUNTINGSORT "--countingsort"
 #define QUICKSORT "--quicksort"
+#define HEAPINSERTSORT "--heapinsertsort"
 #define VERBOSE "--verbose"
 #define DISPLAYV "--displayvectors"
 #define TODOS "--todos"
@@ -47,6 +48,8 @@ int main (int argvc,char *argv[]) {
 			Options[6]=1;
 		if(strcmp(argv[i],QUICKSORT)==0)
 			Options[7]=1;
+    if(strcmp(argv[i],HEAPINSERTSORT)==0)
+      Options[8]=1;
 	}
 
   if(Options[0]==1)
@@ -115,8 +118,17 @@ int main (int argvc,char *argv[]) {
   a.QuickSort(A,0,a.getCount()-1);
   a.EndTime();
   if(Options[6]==1)
-  	a.Print(A,a.getCount());
+    a.Print(A,a.getCount());
   cout<<"QuickSort,"<<a.getCount()<<","<<a.timeval_diff()<<endl;
+ } 
+
+ if(Options[8]==1){
+  a.InitTime();
+  a.heapInsertSort(A);
+  a.EndTime();
+  if(Options[6]==1)
+  	a.Print(A,a.getCount());
+  cout<<"heapinsertsort,"<<a.getCount()<<","<<a.timeval_diff()<<endl;
  }
  //elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
  //cout<<a.getCount()<<","<<a.timeval_diff();//elapsed_secs<<endl;

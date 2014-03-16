@@ -36,5 +36,5 @@ class sortAlgorithms{
     void CountingSort(int *A, int length, int *B, int k);
     void QuickSort(int *A, int p, int r);
     int Partition(int *A, int p, int r);
-
+    void heapInsertSort(int *A);
 };
